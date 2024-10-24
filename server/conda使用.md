@@ -20,7 +20,7 @@ deactivate env_name
 source active env_name
 
 # MacOS 退出虚拟环境
-source deactivate
+conda deactivate
 
 # 永久退出基础环境提示符，命令行前边的 [base]
 conda config --set auto_activate_base false
