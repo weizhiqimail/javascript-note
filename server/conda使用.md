@@ -22,6 +22,9 @@ source active env_name
 # MacOS 退出虚拟环境
 source deactivate
 
+# 永久退出基础环境提示符，命令行前边的 [base]
+conda config --set auto_activate_base false
+
 # 在虚拟环境中安装额外的包
 conda install -n env_name package_name
 
