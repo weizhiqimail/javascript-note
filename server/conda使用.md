@@ -28,6 +28,12 @@ conda config --set auto_activate_base false
 # 在虚拟环境中安装额外的包
 conda install -n env_name package_name
 
+# 生成依赖文件
+conda env export > environment.yaml
+
+# 依据这个环境文件，创建一个一模一样的环境
+conda env create -f environment.yaml
+
 # 删除虚拟环境
 conda remove -n env_name --all
 
