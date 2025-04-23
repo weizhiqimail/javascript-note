@@ -31,6 +31,9 @@ conda install -n env_name package_name
 # 生成依赖文件
 conda env export > environment.yaml
 
+# 生成依赖文件，忽略最后一行自动生成的本机的项目目录
+conda env export | grep -v "^prefix:" > environment.yaml
+
 # 依据这个环境文件，创建一个一模一样的环境
 conda env create -f environment.yaml
 
