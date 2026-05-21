@@ -37,6 +37,9 @@ conda env export | grep -v "^prefix:" > environment.yaml
 # 依据这个环境文件，创建一个一模一样的环境
 conda env create -f environment.yaml
 
+# 基于已有的 yaml 文件安装依赖
+conda env update -f environment.yaml
+
 # 删除虚拟环境
 conda remove -n env_name --all
 
@@ -45,6 +48,15 @@ conda remove -n env_name package_name
 
 # 查看现在有的镜像
 conda config --show channels
+
+# 移除所有的镜像
+conda config --remove-key channels
+
+# 添加默认官方源
+conda config --add channels defaults
+
+# 完整清理索引
+conda clean --all
 
 # 添加清华大学镜像
 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
